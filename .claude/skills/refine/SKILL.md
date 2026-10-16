@@ -61,7 +61,7 @@ Challenge the entire spec from first principles:
 If the feature should be split: create the new spec file using the `/write-spec` workflow, and update `features/INDEX.md` accordingly.
 
 ## The Grill Me Principle
-Same as in `/init` and `/write-spec`:
+Same as in `/kit-init` and `/write-spec`:
 - **One question at a time** — never list multiple questions
 - **Always provide a recommended answer** — the user confirms or corrects it
 - **Follow the conversation** — don't follow a fixed script

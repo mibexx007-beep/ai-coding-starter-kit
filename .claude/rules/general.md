@@ -1,6 +1,8 @@
 # General Project Rules
 
 ## New Project Detection (MANDATORY)
+This rule only applies to projects built from the AI Coding Starter Kit, i.e. when both `docs/PRD.md` and `features/INDEX.md` exist. If either file is missing, skip this section and do not suggest `/kit-init` on your own.
+
 Before starting ANY work, check if the project has been initialized:
 1. Read `docs/PRD.md` - if it still contains placeholder text like "_Describe what you are building_", the project is NOT initialized
 2. Read `features/INDEX.md` - if the features table is empty, no features have been defined
@@ -8,8 +10,8 @@ Before starting ANY work, check if the project has been initialized:
 **If the project is not initialized:**
 - Do NOT write any code or create any components
 - Do NOT skip ahead to implementation
-- Instead, tell the user: "This project hasn't been set up yet. Let's start by defining what you want to build. Run `/init` with a description of your idea (e.g. `/init I want to build a task management app`)."
-- If the user already described their idea in the current message, run `/init` automatically with their description
+- Instead, tell the user: "This project hasn't been set up yet. Let's start by defining what you want to build. Run `/kit-init` with a description of your idea (e.g. `/kit-init I want to build a task management app`)."
+- If the user already described their idea in the current message, run `/kit-init` automatically with their description
 
 **If the project is initialized but the user requests a feature not yet in INDEX.md:**
 - Guide them to run `/write-spec` first to create the feature spec before any implementation
@@ -49,7 +51,7 @@ After completing work on any feature, you MUST update tracking files. Follow thi
 **What to update in `features/INDEX.md`:**
 - Feature status column must match the feature spec header
 - Valid statuses: Roadmap → Planned → Architected → In Progress → In Review → Approved → Deployed
-  - **Roadmap**: after `/init` — feature identified, no spec file yet
+  - **Roadmap**: after `/kit-init` — feature identified, no spec file yet
   - **Planned**: after `/write-spec`
   - **Architected**: after `/architecture`
   - **In Progress**: after `/frontend` or `/backend` starts

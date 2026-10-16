@@ -1,6 +1,6 @@
 ---
 name: write-spec
-description: Write a full feature spec for a feature. Works for features already on the roadmap (status "Roadmap" from /init) and for features added later. Pass a feature name or PROJ-X ID as argument.
+description: Write a full feature spec for a feature. Works for features already on the roadmap (status "Roadmap" from /kit-init) and for features added later. Pass a feature name or PROJ-X ID as argument.
 argument-hint: "feature name or PROJ-X ID"
 user-invocable: true
 ---
@@ -26,7 +26,7 @@ Interview the user until you reach a **complete shared understanding** of the fe
 4. Check existing APIs: `git ls-files src/app/api/`
 
 **If the project has not been initialized** (PRD is still the empty template):
-> "The project hasn't been set up yet. Run `/init` first to define the project vision and feature map."
+> "The project hasn't been set up yet. Run `/kit-init` first to define the project vision and feature map."
 → Stop here.
 
 **If no argument was provided**, ask: "Which feature would you like to spec out?" and list all features with status "Roadmap" from INDEX.md.
@@ -34,10 +34,10 @@ Interview the user until you reach a **complete shared understanding** of the fe
 ## Three Entry Points
 
 ### Entry Point A: Feature exists in INDEX.md with status "Roadmap"
-The feature was identified during `/init`. Proceed directly to the Interview Phase.
+The feature was identified during `/kit-init`. Proceed directly to the Interview Phase.
 
 ### Entry Point B: Feature does NOT exist in INDEX.md yet
-The feature was forgotten during `/init` or is being added later. Before the full interview, quickly clarify:
+The feature was forgotten during `/kit-init` or is being added later. Before the full interview, quickly clarify:
 - What is the feature called?
 - What priority? (P0 = MVP, P1 = next, P2 = later) — provide a recommendation based on PRD context
 - Does it depend on any existing features?

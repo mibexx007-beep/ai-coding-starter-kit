@@ -1,5 +1,5 @@
 ---
-name: init
+name: kit-init
 description: Initialize a new project. Creates the PRD and a prioritized feature map. Run once at the very start of a new project. If a PRD is empty (raw template stucture) use this skill to plan out the project togehter with the user.
 argument-hint: "description of what you want to build"
 user-invocable: true
@@ -51,13 +51,13 @@ Ask:
 > My recommendation: Yes — most apps need at least local persistence. If multiple users or cross-device sync is needed, a backend is required.
 
 **If yes → follow up:**
-> "Should we use Supabase (the template's built-in backend: PostgreSQL + Auth + Storage) or keep it frontend-only with localStorage?"
-> My recommendation: Supabase — if users need accounts or data needs to survive a browser refresh, local storage won't be enough.
+> "Should we use the standard stack (MariaDB + Prisma, Better Auth for login, hosted on Windows Server) or keep it frontend-only with localStorage?"
+> My recommendation: MariaDB stack — if users need accounts or data needs to survive a browser refresh, local storage won't be enough.
 
-**If Supabase is chosen:**
-- Add **"Supabase Infrastructure Setup"** as **PROJ-1, P0** in the feature map
+**If the MariaDB stack is chosen:**
+- Add **"Infrastructure Setup (MariaDB, Prisma, Auth)"** as **PROJ-1, P0** in the feature map
 - All features that require auth, data storage, or file uploads must list PROJ-1 as a dependency
-- This feature covers: project setup, environment variables, database schema outline, auth configuration
+- This feature covers: local MariaDB database and app user, Prisma schema + first migration, environment variables, auth configuration (Better Auth, roles), Windows Server target noted for `/deploy`
 
 **If frontend-only (localStorage):**
 - No infrastructure feature needed
@@ -119,9 +119,9 @@ Apply feedback, then update `features/INDEX.md` and the "Next Available ID" line
 
 ## Checklist Before Completion
 - [ ] PRD fully filled out (Vision, Target Users, Roadmap, Metrics, Constraints, Non-Goals)
-- [ ] Backend decision resolved (Supabase vs. localStorage)
-- [ ] If Supabase: "Supabase Infrastructure Setup" added as PROJ-1, P0, no dependencies
-- [ ] If Supabase: all data/auth-dependent features list PROJ-1 as dependency
+- [ ] Backend decision resolved (MariaDB stack vs. localStorage)
+- [ ] If MariaDB: "Infrastructure Setup (MariaDB, Prisma, Auth)" added as PROJ-1, P0, no dependencies
+- [ ] If MariaDB: all data/auth-dependent features list PROJ-1 as dependency
 - [ ] If frontend-only: noted in PRD Constraints
 - [ ] Design system decision resolved
 - [ ] If design system provided: saved to `docs/design-system.md` and referenced in PRD

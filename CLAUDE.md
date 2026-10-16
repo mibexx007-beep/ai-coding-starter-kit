@@ -6,8 +6,8 @@
 
 - **Framework:** Next.js 16 (App Router), TypeScript
 - **Styling:** Tailwind CSS + shadcn/ui (copy-paste components)
-- **Backend:** Supabase (PostgreSQL + Auth + Storage) - optional
-- **Deployment:** Vercel
+- **Backend:** MariaDB via Prisma (migrations) + Better Auth (email/password, roles) - optional
+- **Deployment:** Windows Server 2019 (IIS reverse proxy, Node as Windows service via WinSW) - no Docker, no WSL
 - **Validation:** Zod + react-hook-form
 - **State:** React useState / Context API
 
@@ -19,7 +19,7 @@ src/
   components/
     ui/             shadcn/ui components (NEVER recreate these)
   hooks/            Custom React hooks
-  lib/              Utilities (supabase.ts, utils.ts)
+  lib/              Utilities (db.ts, auth.ts, utils.ts)
 features/           Feature specifications (PROJ-X-name.md)
   INDEX.md          Feature status overview
 docs/
@@ -29,13 +29,13 @@ docs/
 
 ## Development Workflow
 
-1. `/init` - Initialize the project: PRD + feature map (run once at the start)
+1. `/kit-init` - Initialize the project: PRD + feature map (run once at the start)
 2. `/write-spec` - Create a full feature spec for one feature
 3. `/architecture` - Design tech architecture (PM-friendly, no code)
 4. `/frontend` - Build UI components (shadcn/ui first!)
-5. `/backend` - Build APIs, database, RLS policies
+5. `/backend` - Build APIs, Prisma schema/migrations, server-side authorization
 6. `/qa` - Test against acceptance criteria + security audit
-7. `/deploy` - Deploy to Vercel + production-ready checks
+7. `/deploy` - Deploy to Windows Server (IIS + Windows service) + production-ready checks
 
 Use `/refine PROJ-X` at any point to revisit and improve an existing feature spec.
 

@@ -36,10 +36,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### 4. Initialize Your Project
 
-Open Claude Code and run `/init` with a brief description of your idea:
+Open Claude Code and run `/kit-init` with a brief description of your idea:
 
 ```
-/init I want to build a project management tool for small teams
+/kit-init I want to build a project management tool for small teams
 where users can create projects, assign tasks, and track progress.
 ```
 
@@ -77,7 +77,7 @@ Each skill suggests the next step when it finishes. Handoffs are always user-ini
 
 | Skill | Command | What It Does |
 |-------|---------|-------------|
-| Project Initializer | `/init` | One-time setup: creates PRD + feature map via Grill Me interview |
+| Project Initializer | `/kit-init` | One-time setup: creates PRD + feature map via Grill Me interview |
 | Feature Spec Writer | `/write-spec` | Creates a full spec for one feature (user stories, AC, edge cases) |
 | Spec Refiner | `/refine PROJ-X` | Reopens an existing spec to improve, extend, or challenge it |
 | Solution Architect | `/architecture` | Designs PM-friendly tech architecture (no code, only high-level design) |
@@ -99,7 +99,7 @@ Each skill suggests the next step when it finishes. Handoffs are always user-ini
 ## Development Workflow
 
 ```
-0. Setup     /init          -->  PRD + feature map (once per project)
+0. Setup     /kit-init          -->  PRD + feature map (once per project)
 1. Spec      /write-spec      -->  Feature spec in features/PROJ-X.md
              /refine PROJ-X -->  Revisit and improve an existing spec
 2. Design    /architecture  -->  Tech design added to feature spec
@@ -150,7 +150,7 @@ ai-coding-starter-kit/
 |   |   +-- backend.md                   RLS, validation, queries
 |   |   +-- security.md                  Secrets, headers, auth
 |   +-- skills/                      <-- Invocable workflows (/command)
-|   |   +-- init/SKILL.md                /init
+|   |   +-- kit-init/SKILL.md            /kit-init
 |   |   +-- write-spec/SKILL.md           /write-spec
 |   |   +-- refine/SKILL.md              /refine
 |   |   +-- architecture/SKILL.md        /architecture
@@ -189,7 +189,7 @@ ai-coding-starter-kit/
 
 ### 1. Initialize the Project
 
-Run `/init` with a brief description of your idea. The skill interviews you one question at a time and fills out `docs/PRD.md` with your vision, target users, and a prioritized feature map.
+Run `/kit-init` with a brief description of your idea. The skill interviews you one question at a time and fills out `docs/PRD.md` with your vision, target users, and a prioritized feature map.
 
 ### 2. Spec Your First Feature
 
@@ -221,7 +221,7 @@ Each skill is a structured workflow that Claude Code discovers automatically. Sk
 
 | Skill | Execution | Why? |
 |-------|-----------|------|
-| `/init` | Inline | Needs live interview with user |
+| `/kit-init` | Inline | Needs live interview with user |
 | `/write-spec` | Inline | Needs live interview with user |
 | `/refine` | Inline | Needs live interview with user |
 | `/architecture` | Inline | Short output, user reviews in real-time |

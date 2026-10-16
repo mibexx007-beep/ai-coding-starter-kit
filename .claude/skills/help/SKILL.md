@@ -39,8 +39,8 @@ Based on the state analysis, determine what the user should do next:
 
 **If PRD is empty template:**
 > Your project hasn't been initialized yet.
-> Run `/init` with a description of what you want to build.
-> Example: `/init I want to build a task management app for small teams`
+> Run `/kit-init` with a description of what you want to build.
+> Example: `/kit-init I want to build a task management app for small teams`
 
 **If PRD exists but no features:**
 > Your PRD is set up but no features have been created yet.
@@ -73,7 +73,7 @@ Based on the state analysis, determine what the user should do next:
 If the user asked a specific question (via arguments), answer it in the context of the current project state. Common questions:
 
 - "What skills are available?" → List all available skills with brief descriptions
-- "How do I add a new feature?" → Explain `/write-spec` workflow (or `/init` if the project isn't set up yet)
+- "How do I add a new feature?" → Explain `/write-spec` workflow (or `/kit-init` if the project isn't set up yet)
 - "How do I customize this template?" → Point to CLAUDE.md, rules/, skills/
 - "What's the project structure?" → Explain the directory layout
 - "How do I deploy?" → Explain `/deploy` workflow and prerequisites

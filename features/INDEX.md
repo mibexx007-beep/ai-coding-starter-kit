@@ -3,7 +3,7 @@
 > Central tracking for all features. Updated by skills automatically.
 
 ## Status Legend
-- **Roadmap** - `/init` done, feature identified in feature map, no spec file yet
+- **Roadmap** - `/kit-init` done, feature identified in feature map, no spec file yet
 - **Planned** - `/write-spec` done, full spec written, architecture not yet designed
 - **Architected** - `/architecture` done, tech design approved, ready to build
 - **In Progress** - `/frontend` or `/backend` active or completed, not yet in QA

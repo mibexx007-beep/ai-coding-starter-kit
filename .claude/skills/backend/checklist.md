@@ -2,13 +2,13 @@
 
 ## Core Checklist
 - [ ] Checked existing tables/APIs via git before creating new ones
-- [ ] Database tables created in Supabase
-- [ ] Row Level Security enabled on ALL new tables
-- [ ] RLS policies created for SELECT, INSERT, UPDATE, DELETE
+- [ ] Models added to `prisma/schema.prisma` and migration created
+- [ ] Migration applies cleanly on an empty database (`npx prisma migrate reset` locally)
+- [ ] Server-side authorization (session + role/ownership) in EVERY route and Server Action
 - [ ] Indexes created on performance-critical columns
 - [ ] Foreign keys set with appropriate ON DELETE behavior
 - [ ] All planned API endpoints implemented in `/src/app/api/`
-- [ ] Authentication verified (no access without valid session)
+- [ ] Authentication verified (no access without valid session, wrong role gets 403)
 - [ ] Input validation with Zod on all POST/PUT requests
 - [ ] Meaningful error messages with correct HTTP status codes
 - [ ] No TypeScript errors in API routes
@@ -26,8 +26,8 @@
 
 ## Performance Checklist
 - [ ] All frequently filtered columns have indexes
-- [ ] No N+1 queries (use Supabase joins instead of loops)
-- [ ] All list queries use `.limit()`
+- [ ] No N+1 queries (use Prisma `include`/`select` instead of loops)
+- [ ] All list queries use `take` / pagination
 - [ ] Zod validation on all write endpoints
 - [ ] Slow queries cached where appropriate (optional for MVP)
 - [ ] Rate limiting on public-facing APIs (optional for MVP)

@@ -28,7 +28,8 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 - Keep components small and focused
 - Use TypeScript interfaces for all props
 
-## Auth Best Practices (Supabase)
+## Auth Best Practices (Better Auth)
 - Use `window.location.href` for post-login redirect (not `router.push`)
-- Always verify `data.session` exists before redirecting
+- Always verify the sign-in call returned no error and a session exists before redirecting
+- Hiding UI by role is convenience only; the server must enforce the role
 - Always reset loading state in all code paths (success, error, finally)
